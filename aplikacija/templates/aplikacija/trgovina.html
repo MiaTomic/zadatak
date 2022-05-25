@@ -1,0 +1,29 @@
+{% extends 'aplikacija/index.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
+
+
+  <div class = "row">
+    {% for product in products  %}
+    <div class = "col-lg-4">
+      <img class= "thumbnail" src="{{product.imageURL}}" alt="za pocetak umjeso slika">
+
+      <div class = "box-element product">
+        <h6 class ="naziv-proizvoda"><strong>{{product.name}}</strong></h6>
+        <hr>
+        <button data-product = {{product.id}} data-action="add" class = "btn btn-danger update-cart" >Dodaj u košaricu</button>
+ 
+        
+        <a class = "btn btn-outline-danger " href="{% url 'vise' product.pk %}"> Pogledaj više</a>
+        <h4 style = "display: inline-block; float: right;" >KM{{product.price|floatformat:2}}</h4>
+
+      </div>
+
+    </div>
+    {% endfor %}
+
+
+  </div>
+{% endblock content %}
+
