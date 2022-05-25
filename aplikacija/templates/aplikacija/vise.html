@@ -1,0 +1,29 @@
+{% extends 'aplikacija/index.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "aplikacija/vise.css" %}">
+{% endblock css_files %}
+{% block content %}
+<div class = "container">
+<h1 class = "naslov">{{product.name}}</h1>
+<section >
+    <img class="recept-slika" src="{{product.image.url}}" alt="">
+</section>
+<div class = "sastojci">{{product.sastojci}}</div>
+<br>
+
+<div class = "zanimljivosti">{{product.content}}</div>
+<div class = "priprema">{{product.priprema}}</div>
+<a class = "btn btn-outline-danger btn-lg btn-block nastavi" href="{% url 'trgovina' %}"> Nastavi kupnju</a>
+</div>
+
+
+
+
+{% endblock content %}
