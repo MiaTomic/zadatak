@@ -1,0 +1,35 @@
+{% extends 'aplikacija/index.html' %}
+{% load static %}
+
+{% block title %}
+    Thank You
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'aplikacija/hvala.css' %}">
+{% endblock css_files %}
+{% csrf_token %}
+{% block content %}
+<div class="content">
+  <div class="wrapper-1">
+    <div class="wrapper-2">
+      <h1>Thank you !</h1>
+      <p>Hvala vam što ste postali jedan od naših zadovoljnih kupaca! </p>
+      <p>Vaša narudžba bi uskoro trebala biti na vašoj kućnoj adresi  </p>
+      <p>Javite nam vaše utiske!</p>
+      <br>
+      <br>
+      <a class = "go-home" href="{% url 'trgovina' %}">Vrati se na početnu</a>
+
+    </div>
+    
+</div>
+</div>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+
+{% endblock content %}
+
+
